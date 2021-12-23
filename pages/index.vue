@@ -1,16 +1,45 @@
 <template>
-  <div class="relative -mt-14 sm:-mt-32 flex justify-center items-center" style="min-height:65vh;">
-    <div class="grid grid-cols-1 gap-10 sm:gap-12 xl:gap-24 md:grid-cols-2 items-center mt-10 mx-auto max-w-screen-xl">
-      <div class="text-center sm:text-left">
-        <h3 class="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl lg:text-5xl xl:text-6xl">One stop shop for all real estate needs</h3>
-        <p class="mt-3 text-lg sm:text-2xl font-medium sm:leading-10 space-y-6 mb-6 text-gray-600">AJ is your one stop shop for everything Real Estate. From buying and selling your home all the way through to your mortgage.</p>
-        <div>
-          <servicesselector />
-        </div>
+  <div>
+    <div class="hidden sm:flex absolute inset-y-0 right-0 top-0 flex sm:items-end lg:items-center lg:pb-6 lg:pt-32">
+      <img src="~/assets/img/HomeIllustrationCliff.svg" alt="Home Illustration" class="h-48 sm:h-1/2 lg:h-full">
+    </div>
+
+    <div class="px-4 sm:px-6 lg:px-8">
+      <IndexHerotwo />
+    </div>
+
+    <div class="relative min-h-[60vh] mt-10 sm:hidden">
+      <div class="absolute sm::hidden inset-y-0 top-0 right-0 flex items-start pl-2">
+        <img src="~/assets/img/HomeIllustrationCliffMobile.svg" alt="Home Illustration" class="h-auto sm:h-full">
       </div>
-      <div class="flex justify-center sm:justify-end mt-10 sm:mt-16 md:mt-0">
-        <!-- <img src="@/assets/img/logos/logo.png" alt="" class=""> -->
+    </div>
+
+    <div>
+      <div class="max-w-7xl lg:max-w-screen-2xl mx-auto pb-16 lg:pb-24 px-4 sm:px-6 lg:px-8">
+        <IndexAbout class="mt-12 sm:mt-20" />
+        <IndexVersus class="mt-20 sm:mt-32" />
+        <IndexCta class="mt-20 sm:mt-32 pb-32" />
       </div>
     </div>
   </div>
 </template>
+
+<script setup>
+definePageMeta({
+  layout: "landing",
+})
+
+const meta = useMeta({
+  title: "AJ Curcio Real Estate and Mortgages",
+  meta: [
+    { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1' },
+    { hid: 'description', name: 'description', content: "AJ Curcio is your one stop shop for Real Estate and Mortgages. See what AJ is all about and get started now."},
+    { hid: 'image', name: 'image', content: '/cta_banner.png' },
+    { name: 'twitter:card', content: "summary_large_image"},
+    { name: 'twitter:title', content: "AJ Curcio Real Estate and Mortgages"},
+    { name: 'twitter:description', content: "AJ Curcio is your one stop shop for Real Estate and Mortgages. See what AJ is all about and get started now."},
+    { name: 'twitter:image', content: "to do"}
+  ]
+})
+
+</script>
