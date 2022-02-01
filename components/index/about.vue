@@ -1,9 +1,9 @@
 <template>
-  <div class="sm:grid sm:grid-cols-2 gap-10 sm:gap-12 xl:gap-24">
-    <div class="mt-16 sm:mt-0">
+  <div class="grid sm:grid-cols-2 gap-10 sm:gap-12 xl:gap-24">
+    <div class="order-last sm:order-first">
       <div class="sm:relative sm:h-full">
-        <div class="absolute z-10 mix-blend-multiply bg-red-700 h-72 sm:h-full w-full opacity-20 rounded-lg"></div>
-        <img src="~/assets/img/aj_headshot.jpg" alt="AJ Headshot" class="absolute h-72 sm:h-full w-full object-cover rounded-lg" />
+        <div class="hidden sm:inline sm:absolute z-10 mix-blend-multiply bg-red-700 h-72 sm:h-full w-full opacity-20 rounded-lg"></div>
+        <img src="~/assets/img/aj_headshot.jpg" alt="AJ Headshot" class="sm:absolute h-72 sm:h-full w-full object-cover rounded-lg" />
       </div>
     </div>
     <div>
