@@ -45,7 +45,7 @@
     </div>
 
     <div class="mt-10 sm:mt-0">
-      <img src="~/assets/img/choice.svg" alt="AJ Headshot" class="h-72 sm:h-full w-full object-cover rounded-lg" />
+      <img src="~/assets/img/choice.svg" alt="AJ Headshot" class="h-full w-full object-cover rounded-lg" />
     </div>
   </div>
 </template>
