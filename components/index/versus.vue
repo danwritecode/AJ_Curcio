@@ -2,7 +2,7 @@
   <div class="sm:grid sm:grid-cols-2 gap-10 sm:gap-12 xl:gap-24">
     <div>
       <h2 class="text-3xl font-extrabold tracking-tight text-gray-900">
-        AJ versus the Others
+        AJ Versus the Others
       </h2>
       <p class="mt-4 text-lg text-gray-500">
         Semper curabitur ullamcorper posuere nunc sed. Ornare iaculis bibendum malesuada faucibus lacinia porttitor. Pulvinar laoreet sagittis viverra duis.

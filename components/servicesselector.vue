@@ -2,7 +2,7 @@
   <div>
     <div class="sm:hidden">
       <label for="tabs" class="sr-only">Select a tab</label>
-      <select id="tabs" name="tabs" class="block w-full focus:ring-red-500 focus:border-red-500 border-gray-300 rounded-md">
+      <select @change="currentlySelectedService = $event.target.value" id="tabs" name="tabs" class="block w-full focus:ring-red-500 focus:border-red-500 border-gray-300 rounded-md">
         <option v-for="service in services" :key="service.serviceName">{{ service.serviceName }}</option>
       </select>
     </div>
