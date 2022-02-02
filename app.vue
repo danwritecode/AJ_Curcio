@@ -24,6 +24,7 @@
   <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8">
     <NuxtPage />
   </div>
+  <LayoutFooter class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8" />
 </template>
 
 <style>
