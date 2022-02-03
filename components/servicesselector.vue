@@ -19,9 +19,9 @@
       <label for="name" class="absolute -top-2 left-2 -mt-px inline-block px-1 bg-white text-xs font-medium text-gray-900">{{ field.fieldName }}</label>
       <input type="text" name="name" id="name" class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm" :placeholder="field.placeholder">
     </div>
-    <button type="button" class="w-full inline-flex justify-center items-center px-6 py-1.5 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-hover-300">
+    <NuxtLink :to="{ name: 'get-started', query: { type: currentlySelectedService }}" class="w-full inline-flex justify-center items-center px-6 py-1.5 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-hover-300">
       Get started
-    </button>
+    </NuxtLink>
   </div>
 </template>
 
@@ -31,12 +31,12 @@ import { defineComponent, ref, computed } from '@vue/composition-api'
 export default defineComponent({
   setup() {
     const services = [
-      { serviceName: "Sell Home", fields: [{fieldName: "Name", placeholder: "Jane Doe"}, {fieldName: "Email", placeholder: "jdoe@email.com"}, {fieldName: "Foo", placeholder: "Placeholder"}] },
       { serviceName: "Buy Home", fields: [{fieldName: "Name", placeholder: "Jane Doe"}, {fieldName: "Email", placeholder: "jdoe@email.com"}, {fieldName: "Price Range", placeholder: "200-400k"}] },
+      { serviceName: "Sell Home", fields: [{fieldName: "Name", placeholder: "Jane Doe"}, {fieldName: "Email", placeholder: "jdoe@email.com"}, {fieldName: "Foo", placeholder: "Placeholder"}] },
       { serviceName: "Mortgage", fields: [{fieldName: "Name", placeholder: "Jane Doe"}, {fieldName: "Email", placeholder: "jdoe@email.com"}, {fieldName: "Salary", placeholder: "$75k"}] }
     ]
 
-    const currentlySelectedService = ref("Sell Home")
+    const currentlySelectedService = ref("Buy Home")
 
     const selectedService = computed(() => services.filter(service => service.serviceName === currentlySelectedService.value)[0])
 
