@@ -1,7 +1,7 @@
 <template>
   <form class="w-full">
     <div class="overflow-hidden sm:rounded-md border border-gray-200">
-      <div class="px-4 py-5 bg-white sm:p-6">
+      <div v-if="currentStep === 'Personal Info'" class="px-4 py-5 bg-white sm:p-6">
         <div class="grid grid-cols-6 gap-6">
           <div class="col-span-6 sm:col-span-3">
             <label for="first-name" class="block text-sm font-medium text-gray-700">First name</label>
@@ -49,8 +49,11 @@
         </div>
       </div>
       <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-        <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-hover-300">
-          Save
+        <button v-if="!onLastStep" type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-hover-300">
+          Next
+        </button>
+        <button v-else type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-hover-300">
+          Submit
         </button>
       </div>
     </div>
@@ -59,6 +62,12 @@
 
 <script>
 export default {
+  props: {
+    steps: Array,
+    completedSteps: Array,
+    currentStep: String,
+    onLastStep: Boolean
+  },
   setup() {
 
   }

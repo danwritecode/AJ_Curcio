@@ -9,7 +9,7 @@
       </div>
       <div class="flex mt-14">
         <GetstartedStepindicator :steps="buyerSteps" :completedSteps="completedSteps" :currentStep="currentStep"/>
-        <GetstartedQuestionairebuyer v-if="customerType==='Buy Home'"/>
+        <GetstartedQuestionairebuyer v-if="customerType==='Buy Home'" :steps="buyerSteps" :completedSteps="completedSteps" :currentStep="currentStep" :onLastStep="onLastStep"/>
       </div>
     </div>
     <!-- <div class="relative col-span-2 overflow-visible" style="width:45vw;">
@@ -25,24 +25,45 @@
 </template>
 
 <script>
-import {ref, computed } from "vue"
+import {ref, computed } from 'vue'
 import { useRoute } from 'vue-router'
 
 export default {
   setup() {
     const route = useRoute()
+
     const customerType = route.query.type
-
     const buyerSteps = ['Personal Info', 'Financials', 'Home Requirements', 'Preferences']
+    const sellerSteps = ['Personal Info', 'Financials', 'Home Requirements', 'Preferences']
+    const mortgageSteps = ['Personal Info', 'Financials', 'Home Requirements', 'Preferences']
 
-    const completedSteps = ref(['Personal Info'])
-    const currentStep = ref('Financials')
+    const steps = ref([])
+
+    if(customerType === 'Buy Home') {
+      steps.value = buyerSteps
+    } else if(customerType === 'Sell Home') {
+      steps.value = sellerSteps
+    } else if(customerType === 'Mortgage') {
+      steps.value = mortgageSteps
+    }
+
+    const completedSteps = ref([])
+    const currentStep = ref('')
+    const currentStepIndex = ref(0)
+    const onLastStep = computed(() => {
+      return currentStepIndex.value === steps.value.length - 1  ? true:false
+    })
+
+    currentStep.value = steps.value[currentStepIndex.value]
+
 
     return {
       buyerSteps,
       customerType,
       completedSteps,
-      currentStep
+      currentStep,
+      currentStepIndex,
+      onLastStep
     }
   },
 }
