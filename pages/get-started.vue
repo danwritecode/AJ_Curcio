@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
+  <div class="grid grid-cols-1 lg:grid-cols-4 gap-12" style="height:80vh;">
     <div class="lg:col-span-2">
       <div>
         <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">
@@ -9,14 +9,17 @@
       </div>
       <div class="flex mt-14">
         <GetstartedStepindicator :steps="buyerSteps" :completedSteps="completedSteps" :currentStep="currentStep"/>
-        <GetstartedQuestionairebuyer v-if="customerType==='Buy Home'" :steps="buyerSteps" :completedSteps="completedSteps" :currentStep="currentStep" :onLastStep="onLastStep"/>
+        <GetstartedQuestionairebuyer v-if="customerType==='Buy Home'" :steps="buyerSteps" :completedSteps="completedSteps" :currentStep="currentStep" v-model:currentStepIndex="currentStepIndex" :onLastStep="onLastStep"/>
+        <GetstartedQuestionaireseller v-if="customerType==='Sell Home'" :steps="buyerSteps" :completedSteps="completedSteps" :currentStep="currentStep" v-model:currentStepIndex="currentStepIndex" :onLastStep="onLastStep"/>
+        <GetstartedQuestionairemortgage v-if="customerType==='Mortgage'" :steps="buyerSteps" :completedSteps="completedSteps" :currentStep="currentStep" v-model:currentStepIndex="currentStepIndex" :onLastStep="onLastStep"/>
+        <GetstartedQuestionairecash v-if="customerType==='Cash Offer'" :steps="buyerSteps" :completedSteps="completedSteps" :currentStep="currentStep" v-model:currentStepIndex="currentStepIndex" :onLastStep="onLastStep"/>
       </div>
     </div>
     <!-- <div class="relative col-span-2 overflow-visible" style="width:45vw;">
       <img src="@/assets/img/choosing_house.svg" alt="" class="lg:absolute lg:right-0 w-full h-full object-cover object-left">
     </div> -->
     <div class="hidden lg:inline mt-10 lg:mt-0 lg:relative lg:col-span-2" style="width:45vw;">
-      <img src="@/assets/img/select_house.svg" alt="" class="lg:absolute w-full h-full">
+      <img src="@/assets/img/select_house.svg" alt="" class="lg:absolute lg:top-0 w-full" style="height:80vh;">
     </div>
     <div class="lg:hidden mt-10 lg:mt-0 lg:relative lg:col-span-2">
       <img src="@/assets/img/select_house.svg" alt="" class="lg:absolute w-3/4 h-full mx-auto">
@@ -48,13 +51,13 @@ export default {
     }
 
     const completedSteps = ref([])
-    const currentStep = ref('')
-    const currentStepIndex = ref(0)
+    const currentStep = computed(() => {
+      return steps.value[currentStepIndex.value]
+    })
+    const currentStepIndex = ref(1)
     const onLastStep = computed(() => {
       return currentStepIndex.value === steps.value.length - 1  ? true:false
     })
-
-    currentStep.value = steps.value[currentStepIndex.value]
 
 
     return {
