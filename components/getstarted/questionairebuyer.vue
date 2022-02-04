@@ -112,28 +112,57 @@
       <div v-if="currentStep === 'Home Requirements'" class="px-4 py-5 bg-white sm:p-6">
         <div class="grid grid-cols-6 gap-6">
           <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-            <label for="first-name" class="block text-sm font-medium text-gray-700">Bedrooms</label>
-            <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md transition-hover-300">
+            <label for="bedrooms" class="block text-sm font-medium text-gray-700">Bedrooms</label>
+            <input type="number" name="bedrooms" id="bedrooms" autocomplete="given-name" class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md transition-hover-300">
           </div>
 
           <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-            <label for="last-name" class="block text-sm font-medium text-gray-700">Full Baths</label>
-            <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md transition-hover-300">
+            <label for="full-baths" class="block text-sm font-medium text-gray-700">Full Baths</label>
+            <input type="number" name="full-baths" id="full-baths" autocomplete="family-name" class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md transition-hover-300">
           </div>
 
           <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-            <label for="email-address" class="block text-sm font-medium text-gray-700">Half Baths</label>
-            <input type="text" name="email-address" id="email-address" autocomplete="email" class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md transition-hover-300">
+            <label for="half-baths" class="block text-sm font-medium text-gray-700">Half Baths</label>
+            <input type="number" name="half-baths" id="half-baths" autocomplete="email" class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md transition-hover-300">
           </div>
 
           <div class="col-span-6 sm:col-span-3">
-            <label for="street-address" class="block text-sm font-medium text-gray-700">Number of Stories</label>
-            <input type="text" name="street-address" id="street-address" autocomplete="street-address" class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md transition-hover-300">
+            <label for="number-stories" class="block text-sm font-medium text-gray-700">Number of Stories</label>
+            <input type="number" name="number-stories" id="number-stories" autocomplete="street-address" class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md transition-hover-300">
           </div>
 
           <div class="col-span-6 sm:col-span-3">
-            <label for="street-address" class="block text-sm font-medium text-gray-700">Square Footage</label>
-            <input type="text" name="street-address" id="street-address" autocomplete="street-address" class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md transition-hover-300">
+            <label for="square-footage" class="block text-sm font-medium text-gray-700">Square Footage</label>
+            <input type="number" name="square-footage" id="square-footage" autocomplete="street-address" class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md transition-hover-300">
+          </div>
+        </div>
+      </div>
+
+      <div v-if="currentStep === 'Preferences'" class="px-4 py-5 bg-white sm:p-6">
+        <div class="grid grid-cols-6 gap-6">
+          <div class="col-span-6">
+            <label for="timeline" class="block text-sm font-medium text-gray-700">When do you want to be in your new home?</label>
+            <input type="text" name="timeline" id="timeline" autocomplete="given-name" class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md transition-hover-300">
+          </div>
+
+          <div class="col-span-6">
+            <label for="reasoning" class="block text-sm font-medium text-gray-700">What's the main reason you're shopping for a home?</label>
+            <textarea type="text" name="reasoning" id="reasoning" autocomplete="family-name" class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md transition-hover-300" />
+          </div>
+
+          <div class="col-span-6">
+            <label for="concerns" class="block text-sm font-medium text-gray-700">What is your biggest concern when it comes to buying?</label>
+            <textarea type="text" name="concerns" id="concerns" autocomplete="email" class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md transition-hover-300" />
+          </div>
+
+          <div class="col-span-6">
+            <label for="areas-interest" class="block text-sm font-medium text-gray-700">Areas of interest (town or school district)</label>
+            <input type="text" name="areas-interest" id="areas-interest" autocomplete="street-address" class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md transition-hover-300">
+          </div>
+
+          <div class="col-span-6">
+            <label for="other-important" class="block text-sm font-medium text-gray-700">Any other important things?</label>
+            <textarea type="text" name="other-important" id="other-important" autocomplete="street-address" class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md transition-hover-300" />
           </div>
         </div>
       </div>
