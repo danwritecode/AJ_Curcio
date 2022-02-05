@@ -60,16 +60,18 @@
   </form>
 </template>
 
-<script>
-export default {
-  props: {
-    steps: Array,
-    completedSteps: Array,
-    currentStep: String,
-    onLastStep: Boolean
-  },
-  setup() {
+<script setup>
+const props = defineProps({
+  steps: Array,
+  completedSteps: Array,
+  currentStep: String,
+  currentStepIndex: Number,
+  onLastStep: Boolean
+})
 
-  }
+const emit = defineEmits(['update:currentStepIndex'])
+
+const onNext = () => {
+  emit('update:currentStepIndex', props.currentStepIndex + 1)
 }
 </script>

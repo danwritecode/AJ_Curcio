@@ -27,54 +27,38 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import {ref, computed } from 'vue'
 import { useRoute } from 'vue-router'
 
-export default {
-  setup() {
-    const route = useRoute()
 
-    const customerType = route.query.type
-    const buyerSteps = ['Personal Info', 'Financials', 'Home Requirements', 'Preferences']
-    const sellerSteps = ['Personal Info', 'Home Info', 'Additional Info']
-    const mortgageSteps = ['Personal Info', 'Financials', 'Home Requirements', 'Preferences']
+const route = useRoute()
 
-    const steps = ref([])
+const customerType = route.query.type
+const buyerSteps = ['Personal Info', 'Financials', 'Home Requirements', 'Preferences']
+const sellerSteps = ['Personal Info', 'Home Info', 'Additional Info']
+const mortgageSteps = ['Personal Info', 'Financials', 'Home Requirements', 'Preferences']
 
-    if(customerType === 'Buy Home') {
-      steps.value = buyerSteps
-    } else if(customerType === 'Sell Home') {
-      steps.value = sellerSteps
-    } else if(customerType === 'Mortgage') {
-      steps.value = mortgageSteps
-    }
-    const currentStepIndex = ref(0)
+const steps = ref([])
 
-    const completedSteps = computed(() => {
-      return steps.value.slice(0, currentStepIndex.value)
-    })
-
-    const currentStep = computed(() => {
-      return steps.value[currentStepIndex.value]
-    })
-
-    const onLastStep = computed(() => {
-      return currentStepIndex.value === steps.value.length - 1  ? true:false
-    })
-
-
-    return {
-      buyerSteps,
-      sellerSteps,
-      mortgageSteps,
-      customerType,
-      completedSteps,
-      currentStep,
-      currentStepIndex,
-      onLastStep,
-      steps
-    }
-  },
+if(customerType === 'Buy Home') {
+  steps.value = buyerSteps
+} else if(customerType === 'Sell Home') {
+  steps.value = sellerSteps
+} else if(customerType === 'Mortgage') {
+  steps.value = mortgageSteps
 }
+const currentStepIndex = ref(0)
+
+const completedSteps = computed(() => {
+  return steps.value.slice(0, currentStepIndex.value)
+})
+
+const currentStep = computed(() => {
+  return steps.value[currentStepIndex.value]
+})
+
+const onLastStep = computed(() => {
+  return currentStepIndex.value === steps.value.length - 1  ? true:false
+})
 </script>

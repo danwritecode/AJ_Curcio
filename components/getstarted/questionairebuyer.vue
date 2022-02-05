@@ -178,24 +178,56 @@
   </form>
 </template>
 
-<script>
-export default {
-  props: {
-    steps: Array,
-    completedSteps: Array,
-    currentStep: String,
-    currentStepIndex: Number,
-    onLastStep: Boolean
-  },
-  emits: ['update:currentStepIndex'],
-  setup(props, { emit }) {
-    const onNext = () => {
-      emit('update:currentStepIndex', props.currentStepIndex + 1)
-    }
+<script setup>
+import { ref } from 'vue'
 
-    return {
-      onNext
-    }
-  }
+const props = defineProps({
+  steps: Array,
+  completedSteps: Array,
+  currentStep: String,
+  currentStepIndex: Number,
+  onLastStep: Boolean
+})
+
+const emit = defineEmits(['update:currentStepIndex'])
+
+const onNext = () => {
+  emit('update:currentStepIndex', props.currentStepIndex + 1)
 }
+
+const form = ref({
+  info: {
+    firstName: null,
+    lastName: null,
+    email: null,
+    street: null,
+    city: null,
+    state: null,
+    zip: null
+  },
+  financials: {
+    paymentStrategy: null,
+    creditScore: null,
+    doYouOwn: null,
+    sellingRequirement: null,
+    lender: null,
+    priceRange: null,
+    cashAvail: null,
+    monthlyBudget: null
+  },
+  reqs: {
+    beds: null,
+    fullBaths: null, 
+    halfBaths: null,
+    stories: null,
+    sqft: null
+  },
+  prefs: {
+    timeline: null,
+    reasonForMove: null,
+    biggestConcern: null,
+    areasOfInterest: null,
+    other: null
+  }
+})
 </script>
