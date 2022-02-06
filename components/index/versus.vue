@@ -44,8 +44,8 @@
       </dl>
     </div>
 
-    <div class="mt-10 sm:mt-0">
-      <img src="~/assets/img/choice.svg" alt="AJ Headshot" class="h-full w-full object-cover rounded-lg" />
+    <div class="mt-10 sm:mt-0 flex items-end">
+      <img src="~/assets/img/list_selection.svg" alt="AJ Headshot" class="h-full w-full object-left rounded-lg" />
     </div>
   </div>
 </template>
