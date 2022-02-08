@@ -5,10 +5,10 @@ export default defineNuxtPlugin((nuxtApp) => {
   const config = useRuntimeConfig();
   const apiBase = config.API_BASE
 
-  const getMessage = async () => {
+  const getMessage = async (messageId) => {
     const response =  await axios({
       method: 'get',
-      url: apiBase + '/messages/b1ac0913-7635-41a1-8c97-fc7a548fe77c'
+      url: apiBase + `/messages/${messageId}`
     })
     return response
   }
