@@ -168,11 +168,14 @@
       </div>
     </div>
     <div class="px-4 py-3 bg-gray-50 text-right sm:px-6 border border-gray-200 rounded-b-md">
-      <button @click="onNext()" v-if="!onLastStep" type="button" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-hover-300">
-        Next
-      </button>
-      <ClientOnly v-else>
-        <GlobalSubmitButton @click="onSubmit()" text="Submit" color="red" size="lg" :loading="submitLoading" :disabled="!formValid" :invertedColor="false" />
+      <ClientOnly>
+        <button @click="onNext()" v-if="!onLastStep && formValid" type="button" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-hover-300">
+          Next
+        </button>
+        <button @click="onNext()" v-else-if="!onLastStep && !formValid" type="button" disabled class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-red-200 bg-red-400 cursor-default">
+          Next
+        </button>
+        <GlobalSubmitButton v-else @click="onSubmit()" text="Submit" color="red" size="md" :loading="submitLoading" :disabled="!formValid" :invertedColor="false" />
       </ClientOnly>
     </div>
   </form>
@@ -230,11 +233,6 @@ const form = ref({
   other: null
 })
 
-const requiredFields = [
-  'firstName', 'lastName', 'email', 'street', 'city', 'state', 'zip',
-  'paymentStrategy', 'creditScore', 'doYouOwn', 'sellingRequirement', 'monthlyBudget', 'timeline'
-]
-
 
 const submitLoading = ref(false)
 
@@ -263,9 +261,6 @@ const formValid = computed(() => {
       requiredIds.push(element.id)
     }
   })
-
-  console.log(formIds)
-  console.log(requiredIds)
 
   for (const id of formIds) {
     if(requiredIds.includes(id) && !form.value[id]) {
