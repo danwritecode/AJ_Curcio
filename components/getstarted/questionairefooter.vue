@@ -1,7 +1,7 @@
 <template>
   <div class="px-4 py-3 bg-gray-50 text-right sm:px-6 border border-gray-200 rounded-b-md">
     <ClientOnly>
-      <button @click="$emit('nextStep')" v-if="!onLastStep && formValid" type="button" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-hover-300">
+      <button @click="[$emit('nextStep'), formValid = false]" v-if="!onLastStep && formValid" type="button" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-hover-300">
         Next
       </button>
       <button v-else-if="!onLastStep && !formValid" type="button" disabled class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-red-200 bg-red-400 cursor-default">

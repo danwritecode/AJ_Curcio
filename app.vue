@@ -24,5 +24,32 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background-color: #a8bbbf;
 }
+
+/* For basic inputs */
+input[required] + label:after {
+  content: ' *';
+  color: #dc2626;
+}
+/* For textarea inputs */
+textarea[required] + label:after {
+  content: ' *';
+  color: #dc2626;
+}
+/* For select inputs */
+select[required] + label:after {
+  content: ' *';
+  color: #dc2626;
+}
+/* For fieldset inputs */
+fieldset[required] label:first-child:after {
+  content: ' *';
+  color: #dc2626;
+}
+
+input[type=radio] + label:after {
+  content: '';
+}
+
+
 </style>
 
