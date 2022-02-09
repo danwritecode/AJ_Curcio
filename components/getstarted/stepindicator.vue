@@ -1,5 +1,5 @@
 <template>
-  <nav aria-label="Progress" class="w-64">
+  <nav aria-label="Progress" class="hidden lg:block w-64">
     <ol role="list" class="space-y-6">
       <li v-for="step in steps" :key="step">
         <div v-if="step === currentStep && !completedSteps.includes(step)" class="flex items-start" aria-current="step">
@@ -27,6 +27,29 @@
             <span class="ml-3 text-sm font-medium text-gray-500 group-hover:text-gray-900 transition-hover-300">{{ step }}</span>
           </span>
         </button>
+      </li>
+    </ol>
+  </nav>
+  <nav class="lg:hidden flex items-center mb-3" aria-label="Progress">
+    <p class="text-sm font-medium">{{ currentStep }}</p>
+    <ol role="list" class="ml-6 flex items-center space-x-5">
+      <li v-for="step in steps" :key="step">
+        <!-- Completed Step -->
+        <span v-if="completedSteps.includes(step)" class="block w-2.5 h-2.5 bg-red-600 rounded-full">
+          <span class="sr-only">Step 1</span>
+        </span>
+        <!-- Current Step -->
+        <span v-if="step === currentStep && !completedSteps.includes(step)" class="relative flex items-center justify-center" aria-current="step">
+          <span class="absolute w-5 h-5 p-px flex" aria-hidden="true">
+            <span class="w-full h-full rounded-full bg-red-200"></span>
+          </span>
+          <span class="relative block w-2.5 h-2.5 bg-red-600 rounded-full" aria-hidden="true"></span>
+          <span class="sr-only">Step 2</span>
+        </span>
+        <!-- Upcoming Step -->
+        <span v-if="step !== currentStep && !completedSteps.includes(step)" class="block w-2.5 h-2.5 bg-gray-200 rounded-full">
+          <span class="sr-only">Step 3</span>
+        </span>
       </li>
     </ol>
   </nav>

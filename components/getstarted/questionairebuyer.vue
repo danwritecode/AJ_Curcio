@@ -1,6 +1,6 @@
 <template>
   <form id="form" class="w-full">
-    <div class="overflow-auto max-h-[55vh] sm:rounded-t-md border border-gray-200 border-b-0">
+    <div class="overflow-auto lg:max-h-[55vh] sm:rounded-t-md border border-gray-200 border-b-0">
       <div v-if="currentStep === 'Personal Info'" class="px-4 py-5 bg-white sm:p-6">
         <div class="grid grid-cols-6 gap-6">
           <div class="col-span-6 sm:col-span-3 flex flex-col-reverse">

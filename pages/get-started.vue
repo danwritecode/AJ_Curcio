@@ -7,7 +7,7 @@
         </h2>
         <p class="mt-2 text-base text-gray-500">The questionaire is designed to be as quick and simple as possible. The more information that can be collected up front, the less time AJ will have to spend getting it from you. Response time is within 8-12 hours.</p>
       </div>
-      <div class="flex mt-14">
+      <div class="lg:flex mt-14">
         <GetstartedStepindicator :steps="steps" :completedSteps="completedSteps" :currentStep="currentStep" v-model:currentStepIndex="currentStepIndex"/>
         <GetstartedQuestionairebuyer v-if="customerType==='Buy Home'" :steps="steps" :completedSteps="completedSteps" :currentStep="currentStep" v-model:currentStepIndex="currentStepIndex" :onLastStep="onLastStep"/>
         <GetstartedQuestionaireseller v-if="customerType==='Sell Home'" :steps="steps" :completedSteps="completedSteps" :currentStep="currentStep" v-model:currentStepIndex="currentStepIndex" :onLastStep="onLastStep"/>
