@@ -9,10 +9,10 @@
       </div>
       <div class="lg:flex mt-14">
         <GetstartedStepindicator :steps="steps" :completedSteps="completedSteps" :currentStep="currentStep" v-model:currentStepIndex="currentStepIndex"/>
-        <GetstartedQuestionairebuyer v-if="customerType==='Buy Home'" :steps="steps" :completedSteps="completedSteps" :currentStep="currentStep" v-model:currentStepIndex="currentStepIndex" :onLastStep="onLastStep"/>
-        <GetstartedQuestionaireseller v-if="customerType==='Sell Home'" :steps="steps" :completedSteps="completedSteps" :currentStep="currentStep" v-model:currentStepIndex="currentStepIndex" :onLastStep="onLastStep"/>
-        <GetstartedQuestionairemortgage v-if="customerType==='Mortgage'" :steps="steps" :completedSteps="completedSteps" :currentStep="currentStep" v-model:currentStepIndex="currentStepIndex" :onLastStep="onLastStep"/>
-        <GetstartedQuestionairecash v-if="customerType==='Cash Offer'" :steps="steps" :completedSteps="completedSteps" :currentStep="currentStep" v-model:currentStepIndex="currentStepIndex" :onLastStep="onLastStep"/>
+        <GetstartedQuestionairebuyer v-if="customerType==='Buy Home'" :currentStep="currentStep" v-model:currentStepIndex="currentStepIndex" :onLastStep="onLastStep"/>
+        <GetstartedQuestionaireseller v-if="customerType==='Sell Home'" :currentStep="currentStep" v-model:currentStepIndex="currentStepIndex" :onLastStep="onLastStep"/>
+        <GetstartedQuestionairemortgage v-if="customerType==='Mortgage'" :currentStep="currentStep" v-model:currentStepIndex="currentStepIndex" :onLastStep="onLastStep"/>
+        <GetstartedQuestionairecash v-if="customerType==='Cash Offer'" :currentStep="currentStep" v-model:currentStepIndex="currentStepIndex" :onLastStep="onLastStep"/>
       </div>
     </div>
     <!-- <div class="relative col-span-2 overflow-visible" style="width:45vw;">

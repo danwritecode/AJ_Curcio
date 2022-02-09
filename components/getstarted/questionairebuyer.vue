@@ -175,8 +175,6 @@
 import { ref } from 'vue'
 
 const props = defineProps({
-  steps: Array,
-  completedSteps: Array,
   currentStep: String,
   currentStepIndex: Number,
   onLastStep: Boolean
