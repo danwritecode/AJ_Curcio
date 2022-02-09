@@ -13,7 +13,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, watch, onMounted } from 'vue'
 
 const { $api } = useNuxtApp()
 
@@ -39,13 +39,14 @@ const onSubmit = async () => {
   }
 }
 
+
+const formValid = ref(false)
 const emailValid = computed(() => {
   const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(props.form.email)
 })
 
-const formValid = computed(() => {
-  const currentStep = props.currentStep // putting this here to trick vue into re-calculating computed
+const evaluateForm = () => {
   const htmlForm = document.getElementById('form')
   const inputsWithId = htmlForm.querySelectorAll('*[id]')
   const formIds = []
@@ -59,14 +60,20 @@ const formValid = computed(() => {
   })
 
   if(formIds.includes('email') && !emailValid.value) {
-    return false
+    formValid.value = false
+    return
   }
 
   for (const id of formIds) {
     if(requiredIds.includes(id) && !props.form[id]) {
-      return false
+      formValid.value = false
+      return
     }
   }
-  return true
+  formValid.value = true
+}
+
+watch(props.form, () => {
+  evaluateForm()
 })
 </script>
