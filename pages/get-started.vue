@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 h-[80vh]">
+  <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:h-[90vh]">
     <div class="lg:col-span-2">
       <div>
         <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">
@@ -21,8 +21,8 @@
     <div class="hidden lg:inline mt-10 lg:mt-0 lg:relative lg:col-span-2 w-[45vw]">
       <img src="@/assets/img/select_house.svg" alt="" class="lg:absolute lg:top-0 w-full h-[80vh]">
     </div>
-    <div class="lg:hidden mt-10 lg:mt-0 lg:relative lg:col-span-2">
-      <img src="@/assets/img/select_house.svg" alt="" class="lg:absolute w-3/4 h-full mx-auto">
+    <div class="lg:hidden mt-10">
+      <img src="@/assets/img/select_house.svg" alt="" class="w-3/4 h-full mx-auto">
     </div>
   </div>
 </template>
