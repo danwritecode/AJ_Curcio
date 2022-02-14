@@ -1,14 +1,24 @@
 <template>
   <div>
-    <div class="px-4 py-3 bg-gray-50 text-right sm:px-6 border border-gray-200 rounded-b-md">
+    <div class="px-4 py-3 bg-gray-50 sm:px-6 border border-gray-200 rounded-b-md">
       <ClientOnly>
-        <button @click="[$emit('nextStep'), formValid = false]" v-if="!onLastStep && formValid" type="button" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-hover-300">
-          Next
-        </button>
-        <button v-else-if="!onLastStep && !formValid" type="button" disabled class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-red-200 bg-red-400 cursor-default">
-          Next
-        </button>
-        <GlobalSubmitButton v-else @click="onSubmit()" text="Submit" color="red" size="md" :loading="submitLoading" :disabled="!formValid || formSubmitted" :invertedColor="false" />
+        <div class="flex justify-end">
+          <div class="flex space-x-2">
+            <button @click="$emit('previousStep')" v-if="!onFirstStep && !formSubmitted" type="button" class="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-hover-300">
+              Back
+            </button>
+            <button v-else disabled type="button" class="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-400">
+              Back
+            </button>
+            <button @click="$emit('nextStep')" v-if="!onLastStep && formValid" type="button" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-hover-300">
+              Next
+            </button>
+            <button v-else-if="!onLastStep && !formValid" type="button" disabled class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-red-200 bg-red-400 cursor-default">
+              Next
+            </button>
+            <GlobalSubmitButton v-else @click="[onSubmit(), $emit('formSubmitted')]" text="Submit" color="red" size="md" :loading="submitLoading" :disabled="!formValid || formSubmitted" :invertedColor="false" />
+          </div>
+        </div>
       </ClientOnly>
     </div>
     <GlobalFormSubmitAlert v-if="formSubmitted" class="mt-6" :success="submitSuccess"/>
@@ -16,17 +26,20 @@
 </template>
 
 <script setup>
-import { ref, computed, watch, onMounted } from 'vue'
+import { ref, computed, watch } from 'vue'
 
 const { $api } = useNuxtApp()
 
 const props = defineProps({
   form: Object,
   onLastStep: Boolean,
+  onFirstStep: Boolean,
   currentStep: String,
-  nextStep: Event
+  nextStep: Event,
+  previousStep: Event,
+  formSubmitted: Event
 })
-const emit = defineEmits(['nextStep'])
+const emit = defineEmits(['nextStep', 'previousStep', 'formSubmitted'])
 
 const submitLoading = ref(false)
 const formSubmitted = ref(false)
@@ -82,6 +95,10 @@ const evaluateForm = () => {
 }
 
 watch(props.form, () => {
+  evaluateForm()
+})
+
+watch(() => props.currentStep, () => {
   evaluateForm()
 })
 </script>

@@ -35,7 +35,7 @@
           </h3>
           <div class="mt-1 text-sm text-red-700">
             <p>
-              Looks like something went wrong when trying to send the message. Please email aj@gmail.com.
+              Looks like something went wrong when trying to send the message. Please email aj@RemaxAspire.com.
             </p>
           </div>
         </div>

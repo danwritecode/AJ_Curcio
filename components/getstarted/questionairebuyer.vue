@@ -141,33 +141,33 @@
       <div v-else-if="currentStep === 'Preferences'" class="px-4 py-5 bg-white sm:p-6">
         <div class="grid grid-cols-6 gap-6">
           <div class="col-span-6 flex flex-col-reverse">
-            <input v-model="form.timeline" type="text" name="timeline" id="timeline" class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md transition-hover-300">
+            <input v-model="form.timeline" type="text" name="timeline" id="timeline" :disabled="!allowInput" class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md transition-hover-300">
             <label for="timeline" class="block text-sm font-medium text-gray-700">When do you want to be in your new home?</label>
           </div>
 
           <div class="col-span-6 flex flex-col-reverse">
-            <textarea v-model="form.reasonForMove" type="text" name="reasoning" id="reasoning" class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md transition-hover-300" />
+            <textarea v-model="form.reasonForMove" type="text" name="reasoning" id="reasoning" :disabled="!allowInput" class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md transition-hover-300" />
             <label for="reasoning" class="block text-sm font-medium text-gray-700">What's the main reason you're shopping for a home?</label>
           </div>
 
           <div class="col-span-6 flex flex-col-reverse">
-            <textarea v-model="form.biggestConcern" type="text" name="concerns" id="biggestConcern" class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md transition-hover-300" />
+            <textarea v-model="form.biggestConcern" type="text" name="concerns" id="biggestConcern" :disabled="!allowInput" class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md transition-hover-300" />
             <label for="concerns" class="block text-sm font-medium text-gray-700">What is your biggest concern when it comes to buying?</label>
           </div>
 
           <div class="col-span-6 flex flex-col-reverse">
-            <input v-model="form.areasOfInterest" type="text" name="areas-interest" id="areasOfInterest" class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md transition-hover-300">
+            <input v-model="form.areasOfInterest" type="text" name="areas-interest" id="areasOfInterest" :disabled="!allowInput" class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md transition-hover-300">
             <label for="areas-interest" class="block text-sm font-medium text-gray-700">Areas of interest (town or school district)</label>
           </div>
 
           <div class="col-span-6 flex flex-col-reverse">
-            <textarea v-model="form.other" type="text" name="other-important" id="other" required class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md transition-hover-300" />
+            <textarea v-model="form.other" type="text" name="other-important" id="other" required :disabled="!allowInput" class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md transition-hover-300" />
             <label for="other-important" class="block text-sm font-medium text-gray-700">Any other important things?</label>
           </div>
         </div>
       </div>
     </div>
-    <GetstartedQuestionairefooter :form="form" :onLastStep="onLastStep" :currentStep="currentStep" @nextStep="onNext" />
+    <GetstartedQuestionairefooter :form="form" :onLastStep="onLastStep" :onFirstStep="onFirstStep" :currentStep="currentStep" @nextStep="onNext" @previousStep="onPrevious" @formSubmitted="[$emit('formSubmitted'), allowInput = false]" />
   </form>
 </template>
 
@@ -177,13 +177,21 @@ import { ref } from 'vue'
 const props = defineProps({
   currentStep: String,
   currentStepIndex: Number,
-  onLastStep: Boolean
+  onLastStep: Boolean,
+  onFirstStep: Boolean,
+  formSubmitted: Event
 })
 
-const emit = defineEmits(['update:currentStepIndex'])
+const emit = defineEmits(['update:currentStepIndex', 'formSubmitted'])
+
+const allowInput = ref(true)
 
 const onNext = () => {
   emit('update:currentStepIndex', props.currentStepIndex + 1)
+}
+
+const onPrevious = () => {
+  emit('update:currentStepIndex', props.currentStepIndex - 1)
 }
 
 const form = ref({

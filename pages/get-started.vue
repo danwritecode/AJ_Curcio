@@ -8,8 +8,8 @@
         <p class="mt-2 text-base text-gray-500">The questionaire is designed to be as quick and simple as possible. The more information that can be collected up front, the less time AJ will have to spend getting it from you. Response time is within 8-12 hours.</p>
       </div>
       <div class="lg:flex mt-14">
-        <GetstartedStepindicator :steps="steps" :completedSteps="completedSteps" :currentStep="currentStep" v-model:currentStepIndex="currentStepIndex"/>
-        <GetstartedQuestionairebuyer v-if="customerType==='Buy Home'" :currentStep="currentStep" v-model:currentStepIndex="currentStepIndex" :onLastStep="onLastStep"/>
+        <GetstartedStepindicator :steps="steps" :completedSteps="completedSteps" :currentStep="currentStep" :formSubmitted="formSubmitted" />
+        <GetstartedQuestionairebuyer v-if="customerType==='Buy Home'" :currentStep="currentStep" v-model:currentStepIndex="currentStepIndex" :onLastStep="onLastStep" :onFirstStep="onFirstStep" @formSubmitted="formSubmitted = true"/>
         <GetstartedQuestionaireseller v-if="customerType==='Sell Home'" :currentStep="currentStep" v-model:currentStepIndex="currentStepIndex" :onLastStep="onLastStep"/>
         <GetstartedQuestionairemortgage v-if="customerType==='Mortgage'" :currentStep="currentStep" v-model:currentStepIndex="currentStepIndex" :onLastStep="onLastStep"/>
         <GetstartedQuestionairecash v-if="customerType==='Cash Offer'" :currentStep="currentStep" v-model:currentStepIndex="currentStepIndex" :onLastStep="onLastStep"/>
@@ -50,6 +50,8 @@ if(customerType === 'Buy Home') {
 }
 const currentStepIndex = ref(0)
 
+const formSubmitted = ref(false)
+
 const completedSteps = computed(() => {
   return steps.value.slice(0, currentStepIndex.value)
 })
@@ -60,5 +62,9 @@ const currentStep = computed(() => {
 
 const onLastStep = computed(() => {
   return currentStepIndex.value === steps.value.length - 1  ? true:false
+})
+
+const onFirstStep = computed(() => {
+  return currentStepIndex.value === 0 ? true:false
 })
 </script>
