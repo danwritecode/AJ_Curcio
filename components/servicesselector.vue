@@ -29,7 +29,7 @@
 import { ref, computed } from 'vue'
 
 const services = ref([
-  { serviceName: "Buy Home", fields: [{fieldName: "fullName", labelName: "Full Name", placeholder: "Jane Doe", fieldValue: "Dan Nelson"}, {fieldName: "email", labelName: "Email", placeholder: "jdoe@email.com", fieldValue: "jdoe@email.com"}, {fieldName: "monthlyBudget", labelName: "Monthly Budget", placeholder: "$1500-2000", fieldValue: "1500"}] },
+  { serviceName: "Buy Home", fields: [{fieldName: "fullName", labelName: "Full Name", placeholder: "Jane Doe", fieldValue: null}, {fieldName: "email", labelName: "Email", placeholder: "jdoe@email.com", fieldValue: null}, {fieldName: "monthlyBudget", labelName: "Monthly Budget", placeholder: "$1500-2000", fieldValue: null}] },
   { serviceName: "Sell Home", fields: [{fieldName: "fullName", labelName: "Full Name", placeholder: "Jane Doe", fieldValue: null}, {fieldName: "email", labelName: "Email", placeholder: "jdoe@email.com", fieldValue: null}, {fieldName: "Foo", labelName: "Foo", placeholder: "Placeholder", fieldValue: null}] },
   { serviceName: "Mortgage", fields: [{fieldName: "fullName", labelName: "Full Name", placeholder: "Jane Doe", fieldValue: null}, {fieldName: "email", labelName: "Email", placeholder: "jdoe@email.com", fieldValue: null}, {fieldName: "Salary", labelName: "Salary", placeholder: "$75k", fieldValue: null}] }
 ])

@@ -219,10 +219,11 @@ const form = ref({
 })
 
 for (const key in route.query) {
-  if (Object.hasOwnProperty.call(route.query, key)) {
+  if (Object.hasOwnProperty.call(route.query, key) && key !== 'type') {
     const element = route.query[key];
     form.value[key] = element
   }
 }
+
 
 </script>

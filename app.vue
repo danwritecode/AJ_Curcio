@@ -9,6 +9,20 @@ html {
   font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
 }
 
+.page-enter-from{
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.2s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+
 ::-webkit-scrollbar {
   width: 20px;
 }
