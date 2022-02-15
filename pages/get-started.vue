@@ -47,7 +47,7 @@ if(customerType === 'Buy Home') {
 } else if(customerType === 'Mortgage') {
   steps.value = mortgageSteps
 }
-const currentStepIndex = ref(3)
+const currentStepIndex = ref(0)
 
 const formSubmitted = ref(false)
 
