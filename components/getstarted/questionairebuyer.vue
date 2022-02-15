@@ -3,14 +3,9 @@
     <div class="overflow-auto lg:max-h-[55vh] sm:rounded-t-md border border-gray-200 border-b-0">
       <div v-if="currentStep === 'Personal Info'" class="px-4 py-5 bg-white sm:p-6">
         <div class="grid grid-cols-6 gap-6">
-          <div class="col-span-6 sm:col-span-3 flex flex-col-reverse">
-            <input v-model="form.firstName" type="text" name="first-name" id="firstName" autocomplete="given-name" required class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md transition-hover-300">
-            <label for="first-name" class="block text-sm font-medium text-gray-700">First name</label>
-          </div>
-
-          <div class="col-span-6 sm:col-span-3  flex flex-col-reverse">
-            <input v-model="form.lastName" type="text" name="last-name" id="lastName" autocomplete="family-name" required class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md transition-hover-300">
-            <label for="last-name" class="block text-sm font-medium text-gray-700">Last name</label>
+          <div class="col-span-6 flex flex-col-reverse">
+            <input v-model="form.fullName" type="text" name="full-name" id="fullName" autocomplete="given-name" required class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md transition-hover-300">
+            <label for="first-name" class="block text-sm font-medium text-gray-700">Full Name</label>
           </div>
 
           <div class="col-span-6 flex flex-col-reverse">
@@ -173,6 +168,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useRoute } from 'vue-router'
 
 const props = defineProps({
   currentStep: String,
@@ -181,24 +177,19 @@ const props = defineProps({
   onFirstStep: Boolean,
   formSubmitted: Event
 })
-
 const emit = defineEmits(['update:currentStepIndex', 'formSubmitted'])
+
+const route = useRoute()
 
 const allowInput = ref(true)
 
-const onNext = () => {
-  emit('update:currentStepIndex', props.currentStepIndex + 1)
-}
-
-const onPrevious = () => {
-  emit('update:currentStepIndex', props.currentStepIndex - 1)
-}
+const onNext = () => { emit('update:currentStepIndex', props.currentStepIndex + 1) }
+const onPrevious = () => { emit('update:currentStepIndex', props.currentStepIndex - 1) }
 
 const form = ref({
   // info
   subject: 'Buyer - New Website Form Submission',
-  firstName: null,
-  lastName: null,
+  fullName: null,
   email: null,
   street: null,
   city: null,
@@ -226,5 +217,12 @@ const form = ref({
   areasOfInterest: null,
   other: null
 })
+
+for (const key in route.query) {
+  if (Object.hasOwnProperty.call(route.query, key)) {
+    const element = route.query[key];
+    form.value[key] = element
+  }
+}
 
 </script>
