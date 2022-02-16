@@ -68,11 +68,14 @@ const emailValid = computed(() => {
 })
 
 const evaluateForm = () => {
+  // get the form
   const htmlForm = document.getElementById('form')
+  // get all inputs with ID's (the id corresponds to the data object key)
   const inputsWithId = htmlForm.querySelectorAll('*[id]')
   const formIds = []
   const requiredIds = []
 
+  // for each id, if they have required attr, add to requiredIds
   inputsWithId.forEach(element => {
     formIds.push(element.id)
     if(element.required) {
@@ -80,11 +83,13 @@ const evaluateForm = () => {
     }
   })
 
+  // if email is on current page and it's not valid set form valid to false
   if(formIds.includes('email') && !emailValid.value) {
     formValid.value = false
     return
   }
 
+  // for each id in the form, if it's in required id's and that field in the form object is not filled out, set to false
   for (const id of formIds) {
     if(requiredIds.includes(id) && !props.form[id]) {
       formValid.value = false

@@ -9,15 +9,10 @@
           </NuxtLink>
         </div>
       </div>
-      <div class="hidden md:flex md:space-x-10">
+      <div class="hidden md:flex md:space-x-10 absolute right-0">
         <a href="#" class="font-medium text-gray-500 hover:text-red-600 transition-hover-300">Services</a>
         <a href="#" class="font-medium text-gray-500 hover:text-red-600 transition-hover-300">About</a>
         <a href="#" class="font-medium text-gray-500 hover:text-red-600 transition-hover-300">Why AJ</a>
-      </div>
-      <div class="md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0">
-        <button type="button" class="inline-flex items-center px-4 py-2 border border-red-300 shadow-sm text-sm font-medium rounded-md text-red-500 bg-white hover:bg-red-50 hover:text-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-hover-300">
-          Get Started
-        </button>
       </div>
     </nav>
     <div class="max-w-7xl mx-auto py-16 lg:py-24">

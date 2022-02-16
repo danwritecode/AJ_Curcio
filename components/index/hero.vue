@@ -1,5 +1,5 @@
 <template>
-  <div class="lg:relative mt-20 lg:-mt-24 flex justify-center items-center min-h-[65vh] md:min-h-[80vh]">
+  <div class="sm:relative mt-20 lg:-mt-24 flex justify-center items-center min-h-[65vh] md:min-h-[80vh]">
     <div class="grid grid-cols-1 gap-10 sm:gap-12 xl:gap-24 lg:grid-cols-2 items-center mt-10 mx-auto max-w-screen-xl">
       <div class="text-center sm:text-left -mt-32">
         <h3 class="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl lg:text-5xl xl:text-6xl">One stop shop for all real estate needs</h3>
