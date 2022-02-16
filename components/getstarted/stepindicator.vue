@@ -17,7 +17,7 @@
             <p class="ml-3 text-sm font-medium text-gray-500">{{ step }}</p>
           </div>
         </div>
-        <div @click="onClick($event)" v-if="completedSteps.includes(step) || formSubmitted" type="button">
+        <div v-if="completedSteps.includes(step) || formSubmitted" type="button">
           <span class="flex items-start">
             <span class="flex-shrink-0 relative h-5 w-5 flex items-center justify-center">
               <svg class="h-full w-full text-red-600 group-hover:text-red-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">

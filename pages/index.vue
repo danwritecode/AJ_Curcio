@@ -18,10 +18,7 @@ const meta = useMeta({
     { name: 'twitter:title', content: "AJ Curcio Real Estate and Mortgages"},
     { name: 'twitter:description', content: "AJ Curcio is your one stop shop for Real Estate and Mortgages. See what AJ is all about and get started now."},
     { name: 'twitter:image', content: "to do"}
-  ],
-  bodyAttrs: {
-    class: 'test'
-  }
+  ]
 })
 
 </script>
