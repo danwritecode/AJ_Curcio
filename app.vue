@@ -16,7 +16,7 @@
       </div>
     </nav>
     <div class="max-w-7xl mx-auto py-16 lg:py-24">
-      <NuxtPage/>
+      <NuxtPage/> 
     </div>
 
     <LayoutFooter class="max-w-7xl mx-auto py-8" />
