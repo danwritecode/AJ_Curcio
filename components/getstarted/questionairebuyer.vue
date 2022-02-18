@@ -8,9 +8,14 @@
             <label for="first-name" class="block text-sm font-medium text-gray-700">Full Name</label>
           </div>
 
-          <div class="col-span-6 flex flex-col-reverse">
+          <div class="col-span-6 sm:col-span-3 flex flex-col-reverse">
             <input v-model="form.email" type="text" name="email-address" id="email" autocomplete="email" required class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md transition-hover-300">
             <label for="email-address" class="block text-sm font-medium text-gray-700">Email address</label>
+          </div>
+
+          <div class="col-span-6 sm:col-span-3 flex flex-col-reverse">
+            <input v-model="form.phone" type="text" name="phone" id="phone" autocomplete="email" required class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md transition-hover-300">
+            <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
           </div>
 
           <div class="col-span-6 flex flex-col-reverse">
@@ -18,7 +23,7 @@
             <label for="street-address" class="block text-sm font-medium text-gray-700">Street address</label>
           </div>
 
-          <div class="col-span-6 sm:col-span-6 lg:col-span-2 flex flex-col-reverse">
+          <div class="col-span-6 lg:col-span-2 flex flex-col-reverse">
             <input v-model="form.city" type="text" name="city" id="city" autocomplete="address-level2" required class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md transition-hover-300">
             <label for="city" class="block text-sm font-medium text-gray-700">City</label>
           </div>
@@ -191,6 +196,7 @@ const form = ref({
   subject: 'Buyer - New Website Form Submission',
   fullName: null,
   email: null,
+  phone: null,
   street: null,
   city: null,
   state: null,

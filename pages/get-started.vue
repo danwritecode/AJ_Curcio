@@ -10,9 +10,8 @@
       <div class="lg:flex mt-14">
         <GetstartedStepindicator :steps="steps" :completedSteps="completedSteps" :currentStep="currentStep" :formSubmitted="formSubmitted" />
         <GetstartedQuestionairebuyer v-if="customerType==='Buy Home'" :currentStep="currentStep" v-model:currentStepIndex="currentStepIndex" :onLastStep="onLastStep" :onFirstStep="onFirstStep" @formSubmitted="formSubmitted = true"/>
-        <GetstartedQuestionaireseller v-if="customerType==='Sell Home'" :currentStep="currentStep" v-model:currentStepIndex="currentStepIndex" :onLastStep="onLastStep"/>
-        <GetstartedQuestionairemortgage v-if="customerType==='Mortgage'" :currentStep="currentStep" v-model:currentStepIndex="currentStepIndex" :onLastStep="onLastStep"/>
-        <GetstartedQuestionairecash v-if="customerType==='Cash Offer'" :currentStep="currentStep" v-model:currentStepIndex="currentStepIndex" :onLastStep="onLastStep"/>
+        <GetstartedQuestionaireseller v-if="customerType==='Sell Home'" :currentStep="currentStep" v-model:currentStepIndex="currentStepIndex" :onLastStep="onLastStep" :onFirstStep="onFirstStep" @formSubmitted="formSubmitted = true"/>
+        <GetstartedQuestionairemortgage v-if="customerType==='Mortgage'" :currentStep="currentStep" v-model:currentStepIndex="currentStepIndex" :onLastStep="onLastStep" :onFirstStep="onFirstStep" @formSubmitted="formSubmitted = true"/>
       </div>
     </div>
     <!-- <div class="relative col-span-2 overflow-visible" style="width:45vw;">
