@@ -3,9 +3,6 @@ import { defineNuxtConfig } from 'nuxt3'
 const nodeEnv = process.env.NODE_ENV
 
 export default defineNuxtConfig({
-  nitro: {
-    preset: 'lambda'
-  },
   publicRuntimeConfig: {
     API_BASE: nodeEnv === 'production' ? 'https://d5u8w9a76b.execute-api.us-east-1.amazonaws.com/api/v1':'http://localhost:3333/api/v1'
   },
