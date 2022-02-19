@@ -10,9 +10,8 @@
         </div>
       </div>
       <div class="hidden md:flex md:space-x-10 absolute right-0">
-        <a href="#" class="font-medium text-gray-500 hover:text-red-600 transition-hover-300">Services</a>
-        <a href="#" class="font-medium text-gray-500 hover:text-red-600 transition-hover-300">About</a>
-        <a href="#" class="font-medium text-gray-500 hover:text-red-600 transition-hover-300">Why AJ</a>
+        <nuxt-link to="/#about" class="font-medium text-gray-500 hover:text-red-600 transition-hover-300 cursor-pointer">About</nuxt-link>
+        <nuxt-link to="/#ajversustheothers" class="font-medium text-gray-500 hover:text-red-600 transition-hover-300 cursor-pointer">Why AJ</nuxt-link>
       </div>
     </nav>
     <div class="max-w-7xl mx-auto py-16 lg:py-24">
@@ -22,3 +21,11 @@
     <LayoutFooter class="max-w-7xl mx-auto py-8" />
   </div>
 </template>
+
+<script setup>
+
+const scrollToDiv = (divId) => {
+  window.document.getElementById(divId).scrollIntoView({behavior: 'smooth', block: 'center'})
+}
+
+</script>

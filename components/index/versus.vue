@@ -1,11 +1,11 @@
 <template>
-  <div class="sm:grid sm:grid-cols-2 gap-10 sm:gap-12 xl:gap-24">
+  <div id="ajversustheothers" class="sm:grid sm:grid-cols-2 gap-10 sm:gap-12 xl:gap-24">
     <div>
       <h2 class="text-3xl font-extrabold tracking-tight text-gray-900">
         AJ Versus the Others
       </h2>
       <p class="mt-4 text-lg text-gray-500">
-        Semper curabitur ullamcorper posuere nunc sed. Ornare iaculis bibendum malesuada faucibus lacinia porttitor. Pulvinar laoreet sagittis viverra duis.
+        There are some big differences between the old way of doing things and the new way. AJ gets that you work during the week and he also gets you can't always talk on the phone. Feel free to text, call or email with him.
       </p>
       <dl class="mt-8 grid grid-cols-1 gap-8">
         <div class="relative">

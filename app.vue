@@ -23,6 +23,7 @@ html {
   opacity: 0;
 }
 
+
 ::-webkit-scrollbar {
   width: 20px;
 }
@@ -38,6 +39,7 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background-color: #a8bbbf;
 }
+
 
 /* For basic inputs */
 input[required] + label:after {
