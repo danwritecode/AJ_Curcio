@@ -75,7 +75,7 @@
             <label for="garage" class="block text-sm font-medium text-gray-700">Is there a garage?</label>
           </div>
           <div class="col-span-6 sm:col-span-3 flex flex-col-reverse">
-            <input v-model="form.garageSpace" type="garageSpace" name="garage-space" id="garageSpace" class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md transition-hover-300">
+            <input v-model="form.garageSpace" type="number" name="garage-space" id="garageSpace" class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md transition-hover-300">
             <label for="garage-space" class="block text-sm font-medium text-gray-700">Garage Spaces</label>
           </div>
 
@@ -94,7 +94,7 @@
       <div v-else-if="currentStep === 'Additional Info'" class="px-4 py-5 bg-white sm:p-6">
         <div class="grid grid-cols-6 gap-6">
           <div class="col-span-6 flex flex-col-reverse">
-            <select v-model="form.cashOffer" id="cashOffer" name="cash-offer" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm transition-hover-300">
+            <select v-model="form.cashOffer" id="cashOffer" name="cash-offer" :disabled="!allowInput" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm transition-hover-300">
               <option>Yes</option>
               <option>No</option>
             </select>

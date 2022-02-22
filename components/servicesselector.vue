@@ -20,7 +20,7 @@
       <input v-model="field.fieldValue" v-on:keyup.enter="$router.push('/get-started' + queryParams)" type="text" name="getstarted" id="getstarted" autofocus class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm" :placeholder="field.placeholder">
     </div>
     <NuxtLink :to="'/get-started' + queryParams" class="w-full inline-flex justify-center items-center px-6 py-1.5 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-hover-300">
-      Get started
+      {{ selectedService.getStartedButtonValue }}
     </NuxtLink>
   </div>
 </template>
@@ -29,9 +29,9 @@
 import { ref, computed } from 'vue'
 
 const services = ref([
-  { serviceName: "Buy Home", fields: [{fieldName: "fullName", labelName: "Full Name", placeholder: "Jane Doe", fieldValue: null}, {fieldName: "email", labelName: "Email", placeholder: "jdoe@email.com", fieldValue: null}, {fieldName: "monthlyBudget", labelName: "Monthly Budget", placeholder: "$1500-2000", fieldValue: null}] },
-  { serviceName: "Sell Home", fields: [{fieldName: "fullName", labelName: "Full Name", placeholder: "Jane Doe", fieldValue: null}, {fieldName: "email", labelName: "Email", placeholder: "jdoe@email.com", fieldValue: null}, {fieldName: "Foo", labelName: "Foo", placeholder: "Placeholder", fieldValue: null}] },
-  { serviceName: "Mortgage", fields: [{fieldName: "fullName", labelName: "Full Name", placeholder: "Jane Doe", fieldValue: null}, {fieldName: "email", labelName: "Email", placeholder: "jdoe@email.com", fieldValue: null}, {fieldName: "Salary", labelName: "Salary", placeholder: "$75k", fieldValue: null}] }
+  { serviceName: "Buy Home", getStartedButtonValue: "Let's Buy", fields: [{fieldName: "fullName", labelName: "Full Name", placeholder: "Jane Doe", fieldValue: null}, {fieldName: "email", labelName: "Email", placeholder: "jdoe@email.com", fieldValue: null}, {fieldName: "phone", labelName: "Phone Number", placeholder: "123 345-6789", fieldValue: null}] },
+  { serviceName: "Sell Home", getStartedButtonValue: "Let's Sell",fields: [{fieldName: "fullName", labelName: "Full Name", placeholder: "Jane Doe", fieldValue: null}, {fieldName: "email", labelName: "Email", placeholder: "jdoe@email.com", fieldValue: null}, {fieldName: "phone", labelName: "Phone Number", placeholder: "123 345-6789", fieldValue: null}] },
+  { serviceName: "Mortgage", getStartedButtonValue: "Let's get Financing", fields: [{fieldName: "fullName", labelName: "Full Name", placeholder: "Jane Doe", fieldValue: null}, {fieldName: "email", labelName: "Email", placeholder: "jdoe@email.com", fieldValue: null}, {fieldName: "phone", labelName: "Phone Number", placeholder: "123 345-6789", fieldValue: null}] }
 ])
 
 const currentlySelectedService = ref("Buy Home")
