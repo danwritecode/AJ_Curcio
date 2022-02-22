@@ -7,6 +7,7 @@
 <style>
 html {
   font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+  overflow-y:overlay;
 }
 
 .page-enter-from{
@@ -27,8 +28,8 @@ html {
 ::-webkit-scrollbar {
   width: 20px;
 }
-::-webkit-scrollbar-track {
-  background-color: #ffffff;
+::-webkit-scrollbar-track-piece {
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
   background-color: #d6dee1;
