@@ -18,6 +18,6 @@
       <slot />
     </div>
 
-    <!-- <LayoutFooter class="max-w-7xl mx-auto py-8 mt-32" /> -->
+    <LayoutFooter class="max-w-7xl lg:max-w-screen-2xl mx-auto py-8" />
   </div>
 </template>

@@ -7,7 +7,7 @@
 <style>
 html {
   font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
-  overflow-y:overlay;
+  overflow-y: overlay;
 }
 
 .page-enter-from{
