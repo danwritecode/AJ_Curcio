@@ -35,9 +35,9 @@ const props = defineProps({
   onLastStep: Boolean,
   onFirstStep: Boolean,
   currentStep: String,
-  nextStep: Event,
-  previousStep: Event,
-  formSubmitted: Event
+  nextStep,
+  previousStep,
+  formSubmitted
 })
 const emit = defineEmits(['nextStep', 'previousStep', 'formSubmitted'])
 

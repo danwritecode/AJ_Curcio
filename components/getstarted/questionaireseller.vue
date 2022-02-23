@@ -120,7 +120,7 @@ const props = defineProps({
   currentStepIndex: Number,
   onLastStep: Boolean,
   onFirstStep: Boolean,
-  formSubmitted: Event
+  formSubmitted
 })
 const emit = defineEmits(['update:currentStepIndex', 'formSubmitted'])
 
