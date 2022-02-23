@@ -44,13 +44,8 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    success: {
-      type: Boolean,
-      required: true
-    }
-  }
-}
+<script setup>
+const props = defineProps({
+  success: Boolean
+})
 </script>

@@ -55,13 +55,12 @@
   </nav>
 </template>
 
-<script>
-export default {
-  props: {
-    steps: Array,
-    completedSteps: Array,
-    currentStep: String,
-    formSubmitted: Boolean
-  }
-}
+<script setup>
+const props = defineProps({
+  steps: Array,
+  completedSteps: Array,
+  currentStep: String,
+  formSubmitted: Boolean
+})
+
 </script>
