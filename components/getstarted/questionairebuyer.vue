@@ -172,16 +172,10 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, defineProps } from 'vue'
 import { useRoute } from 'vue-router'
 
-const props = defineProps({
-  currentStep: String,
-  currentStepIndex: Number,
-  onLastStep: Boolean,
-  onFirstStep: Boolean,
-  formSubmitted
-})
+const props = defineProps(["currentStep", "currentStepIndex", "onLastStep", "onFirstStep", "formSubmitted"])
 const emit = defineEmits(['update:currentStepIndex', 'formSubmitted'])
 
 const route = useRoute()

@@ -26,19 +26,11 @@
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, defineProps } from 'vue'
 
 const { $api } = useNuxtApp()
 
-const props = defineProps({
-  form: Object,
-  onLastStep: Boolean,
-  onFirstStep: Boolean,
-  currentStep: String,
-  nextStep,
-  previousStep,
-  formSubmitted
-})
+const props = defineProps(["form", "onLastStep", "onFirstStep", "currentStep", "nextStep", "previousStep", "formSubmitted"])
 const emit = defineEmits(['nextStep', 'previousStep', 'formSubmitted'])
 
 const submitLoading = ref(false)

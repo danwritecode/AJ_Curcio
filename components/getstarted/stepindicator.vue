@@ -56,6 +56,8 @@
 </template>
 
 <script setup>
+import { defineProps } from 'vue'
+
 const props = defineProps({
   steps: Array,
   completedSteps: Array,
