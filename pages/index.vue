@@ -8,9 +8,9 @@
       <IndexHerotwo />
     </div>
 
-    <div class="relative min-h-[60vh] mt-10 sm:hidden">
+    <div class="sm:hidden relative h-96 mt-10">
       <div class="absolute sm::hidden inset-y-0 top-0 right-0 flex items-start pl-2">
-        <img src="~/assets/img/HomeIllustrationCliffMobile.svg" alt="Home Illustration" class="h-auto sm:h-full">
+        <img src="~/assets/img/HomeIllustrationCliffMobile.svg" alt="Home Illustration" class="h-96">
       </div>
     </div>
 
@@ -34,11 +34,11 @@ const meta = useMeta({
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1' },
     { hid: 'description', name: 'description', content: "AJ Curcio is your one stop shop for Real Estate and Mortgages. See what AJ is all about and get started now."},
-    { hid: 'image', name: 'image', content: '/cta_banner.png' },
+    { hid: 'image', name: 'image', content: 'https://www.ajcurcio.com/public/AJCurcioLogo.jpg' },
     { name: 'twitter:card', content: "summary_large_image"},
     { name: 'twitter:title', content: "AJ Curcio Real Estate and Mortgages"},
     { name: 'twitter:description', content: "AJ Curcio is your one stop shop for Real Estate and Mortgages. See what AJ is all about and get started now."},
-    { name: 'twitter:image', content: "to do"}
+    { name: 'twitter:image', content: 'https://www.ajcurcio.com/public/AJCurcioLogo.jpg'}
   ]
 })
 
