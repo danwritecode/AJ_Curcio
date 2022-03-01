@@ -31,10 +31,8 @@ definePageMeta({
 
 const meta = useMeta({
   title: "AJ Curcio Real Estate and Mortgages",
-  head: {
-    htmlAttrs: {
-      lang: 'en'
-    }
+  htmlAttrs: {
+    lang: 'en'
   },
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1' },
