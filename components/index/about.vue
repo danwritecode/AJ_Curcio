@@ -20,7 +20,7 @@
         </p>
         <p>
           <span class="block text-2xl font-bold text-red-600">30 under 30</span>
-          <span class="mt-1 block text-base text-gray-600"><span class="font-medium text-gray-900">Top performing </span> agent under 30 in Bucks County.</span>
+          <span class="mt-1 block text-base text-gray-600"><span class="font-medium text-gray-900">Top performing </span> agent under 30.</span>
         </p>
         <p>
           <span class="block text-2xl font-bold text-red-600">RE/MAX 100% Club</span>
