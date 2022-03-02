@@ -5,7 +5,7 @@
         AJ Versus the Others
       </h2>
       <p class="mt-4 text-lg text-gray-500">
-        There are some big differences between the old way of doing things and the new way. AJ gets that you work during the week and he also gets you can't always talk on the phone. Feel free to text, call or email with him.
+        Unlike other realtors who rely on outdated methods, AJ implements more modern and efficient solutions. He understands that your busy work week may prevent you from telephoning, so he offers multichannel communication. Feel free to text, call, or email him.
       </p>
       <dl class="mt-8 grid grid-cols-1 gap-8">
         <div class="relative">
@@ -16,7 +16,7 @@
             <p class="ml-9 text-lg leading-6 font-medium text-gray-900">Available After 5pm</p>
           </dt>
           <dd class="mt-2 ml-9 text-base text-gray-500">
-            People work until at least 5pm. Some Realtors don't seem to get that.
+            People work until at least 5pm. Some Realtors do not seem to understand that.
           </dd>
         </div>
         <div class="relative">
@@ -27,7 +27,7 @@
             <p class="ml-9 text-lg leading-6 font-medium text-gray-900">Works Weekends</p>
           </dt>
           <dd class="mt-2 ml-9 text-base text-gray-500">
-            Don't worry about taking time off from work or having to leave work early. AJ can show you homes on the weekend. 
+            No need to worry about taking off from work or having to leave work early. AJ is available on the weekends.
           </dd>
         </div>
         <div class="relative">

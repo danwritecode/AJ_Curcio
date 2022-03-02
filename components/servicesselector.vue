@@ -33,7 +33,7 @@ import { ref, computed } from 'vue'
 const services = ref([
   { serviceName: "Buy Home", getStartedButtonValue: "Let's Buy", fields: [{fieldName: "fullName", labelName: "Full Name", placeholder: "Jane Doe", fieldValue: null}, {fieldName: "email", labelName: "Email", placeholder: "jdoe@email.com", fieldValue: null}, {fieldName: "phone", labelName: "Phone Number", placeholder: "123 345-6789", fieldValue: null}] },
   { serviceName: "Sell Home", getStartedButtonValue: "Let's Sell",fields: [{fieldName: "fullName", labelName: "Full Name", placeholder: "Jane Doe", fieldValue: null}, {fieldName: "email", labelName: "Email", placeholder: "jdoe@email.com", fieldValue: null}, {fieldName: "phone", labelName: "Phone Number", placeholder: "123 345-6789", fieldValue: null}] },
-  { serviceName: "Mortgage", getStartedButtonValue: "Get Financing", fields: [{fieldName: "fullName", labelName: "Full Name", placeholder: "Jane Doe", fieldValue: null}, {fieldName: "email", labelName: "Email", placeholder: "jdoe@email.com", fieldValue: null}, {fieldName: "phone", labelName: "Phone Number", placeholder: "123 345-6789", fieldValue: null}] }
+  { serviceName: "Mortgage & Refinance", getStartedButtonValue: "Get Financing", fields: [{fieldName: "fullName", labelName: "Full Name", placeholder: "Jane Doe", fieldValue: null}, {fieldName: "email", labelName: "Email", placeholder: "jdoe@email.com", fieldValue: null}, {fieldName: "phone", labelName: "Phone Number", placeholder: "123 345-6789", fieldValue: null}] }
 ])
 
 const currentlySelectedService = ref("Buy Home")
