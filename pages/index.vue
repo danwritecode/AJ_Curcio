@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="hidden sm:flex absolute inset-y-0 right-0 top-0 flex sm:items-end lg:items-center lg:pb-6 lg:pt-32">
+    <div v-if="showDesktopIllustration" class="hidden sm:flex absolute inset-y-0 right-0 top-0 sm:items-end lg:items-center lg:pb-6 lg:pt-32">
       <img src="~/assets/img/HomeIllustrationCliff.svg" alt="Home Illustration" class="h-48 sm:h-1/2 lg:h-full">
     </div>
 
@@ -25,9 +25,23 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
+
 definePageMeta({
   layout: "landing",
 })
+
+const showDesktopIllustration = ref(false)
+const fromRoute = useState('fromRoute')
+
+
+if (fromRoute.value === '/') {
+  showDesktopIllustration.value = true
+} else {
+  setTimeout(() => {
+    showDesktopIllustration.value = true
+  }, 225)
+}
 
 const meta = useMeta({
   title: "AJ Curcio Real Estate and Mortgages",
