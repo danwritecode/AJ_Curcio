@@ -10,17 +10,17 @@ html {
   overflow-y: overlay;
 }
 
-.page-enter-from{
+.layout-enter-from{
   opacity: 0;
   transform: translateY(-10px);
 }
 
-.page-enter-active,
-.page-leave-active {
+.layout-enter-active,
+.layout-leave-active {
   transition: all 0.2s;
 }
-.page-enter,
-.page-leave-to {
+.layout-enter,
+.layout-leave-to {
   opacity: 0;
 }
 
