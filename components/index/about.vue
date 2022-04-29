@@ -16,7 +16,7 @@
         </p>
         <p>
           <span class="block text-2xl font-bold text-red-600">5 Star Rating</span>
-          <span class="mt-1 block text-base text-gray-600"><span class="font-medium text-gray-900">Perfect Zillow rating</span> from over 35 buyers and sellers. <a target="_blank" href="https://www.zillow.com/profile/AJCurcioREMAX/#reviews" class="underline">See them here</a></span>
+          <span class="mt-1 block text-base text-gray-600"><span class="font-medium text-gray-900">Perfect Zillow rating</span> from over 35 buyers and sellers. <a target="_blank" href="https://www.zillow.com/profile/iAJCurcio/#reviews" class="underline">See them here</a></span>
         </p>
         <p>
           <span class="block text-2xl font-bold text-red-600">30 under 30</span>
